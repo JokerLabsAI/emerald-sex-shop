@@ -96,7 +96,12 @@ export function Footer() {
           <a href="#">Venta solo a mayores de 18</a>
         </div>
       </div>
-      <p className="container footer__legal">© {new Date().getFullYear()} Esmerad Sex Shop. Todos los derechos reservados.</p>
+      <p className="container footer__legal">
+        © {new Date().getFullYear()} Esmerad Sex Shop. Todos los derechos reservados. · Fotografías de categorías:{" "}
+        <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">
+          Unsplash
+        </a>
+      </p>
     </footer>
   );
 }

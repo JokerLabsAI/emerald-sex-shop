@@ -3,6 +3,8 @@
 import { useMemo, useState } from "react";
 import { useStore } from "@/context/StoreContext";
 import { CATEGORIES, FILTER_TITLES, PRODUCTS, type Filter } from "@/data/products";
+import { CATEGORY_INFO } from "@/data/categories";
+import { CategoryBanner } from "./CategoryBanner";
 import { ProductCard } from "./ProductCard";
 
 type Sort = "destacados" | "precio-asc" | "precio-desc" | "rating";
@@ -63,6 +65,8 @@ export function Shop() {
             </label>
           </div>
         </div>
+
+        {filter in CATEGORY_INFO && !query.trim() && <CategoryBanner category={filter as keyof typeof CATEGORY_INFO} />}
 
         {products.length > 0 ? (
           <div className="grid" aria-live="polite" key={`${filter}-${sort}`}>
